@@ -1,0 +1,248 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.imgur.com/v2i1V37.png") center/cover no-repeat fixed;
+  z-index: -3;
+}
+
+/* WIND */
+.wind-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.wind-line {
+  position: absolute;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.7), transparent);
+  filter: blur(2px);
+  opacity: 0;
+  transform: translateX(-200px) skewX(-20deg);
+  animation: windDrift 6s linear infinite;
+}
+
+.wind-line:nth-child(1) { top: 15%; animation-delay: 0s; }
+.wind-line:nth-child(2) { top: 40%; animation-delay: 2s; }
+.wind-line:nth-child(3) { top: 65%; animation-delay: 4s; }
+.wind-line:nth-child(4) { top: 30%; animation-delay: 6s; }
+.wind-line:nth-child(5) { top: 80%; animation-delay: 1s; }
+
+@keyframes windDrift {
+  0% { transform: translateX(-250px) skewX(-20deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+  90% { opacity: 0.8; }
+  100% { transform: translateX(120vw) skewX(-20deg); opacity: 0; }
+}
+
+/* BODY */
+body {
+  font-family: "Nunito", sans-serif;
+  color: #2f3a2f;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* GLOBAL LINK COLORS */
+a {
+  color: #2f4f3a; /* forest green */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+a:hover {
+  color: #1f3a2a; /* deeper green */
+  text-shadow: 0 0 6px rgba(47, 79, 58, 0.35);
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  z-index: 10;
+}
+
+nav a {
+  font-weight: 600;
+  color: #2f4f3a;
+}
+
+nav a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero img {
+  width: 180px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* PANELS */
+.panel {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+h2 {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* SKILLS */
+.skill-list {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+}
+
+.skill-list li {
+  margin-bottom: 1rem;
+}
+
+/* COLLAGE */
+.collage-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.collage-row img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.75);
+  padding: 1.2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card iframe {
+  width: 100%;
+  height: 360px;
+  border: none;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  margin: 0 0.5rem;
+  font-weight: 600;
+  color: #2f4f3a;
+}
+
+.project-links a:hover {
+  color: #1f3a2a;
+  text-shadow: 0 0 6px rgba(47,79,58,0.35);
+}
+
+/* CERTIFICATIONS */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.cert-card:nth-child(3) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.cert-card {
+  background: rgba(255,255,255,0.75);
+  padding: 1.2rem;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.cert-card a {
+  font-weight: 600;
+  color: #2f4f3a;
+}
+
+.cert-card a:hover {
+  color: #1f3a2a;
+  text-shadow: 0 0 6px rgba(47,79,58,0.35);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  margin-top: 3rem;
+}
