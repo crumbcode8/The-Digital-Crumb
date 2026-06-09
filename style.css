@@ -1,9 +1,11 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BACKGROUND */
 body::after {
   content: "";
   position: fixed;
@@ -15,7 +17,7 @@ body::after {
   z-index: -3;
 }
 
-
+/* WIND */
 .wind-container {
   position: fixed;
   top: 0;
@@ -51,6 +53,7 @@ body::after {
   100% { transform: translateX(120vw) skewX(-20deg); opacity: 0; }
 }
 
+/* BODY */
 body {
   font-family: "Nunito", sans-serif;
   color: #2f3a2f;
@@ -58,7 +61,7 @@ body {
   overflow-x: hidden;
 }
 
-
+/* GLOBAL LINK COLORS */
 a {
   color: #2f4f3a;
   font-weight: 600;
@@ -67,35 +70,39 @@ a {
 }
 
 a:hover {
-  color: #1f3a2a; 
+  color: #1f3a2a;
   text-shadow: 0 0 6px rgba(47, 79, 58, 0.35);
 }
 
-
+/* ⭐ UPDATED NAV — no full-width blur */
 nav {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.35);
   z-index: 10;
+  background: transparent; /* remove blur background */
 }
 
+/* ⭐ Each link gets its own glass pill */
 nav a {
-  font-weight: 600;
-  color: #2f4f3a;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: 0.25s ease;
 }
 
 nav a:hover {
   color: #fff;
   transform: translateY(-2px);
+  background: rgba(255,255,255,0.35);
 }
 
-
+/* HERO */
 .hero {
   text-align: center;
   padding: 3rem 1rem;
@@ -118,7 +125,7 @@ nav a:hover {
   opacity: 0.8;
 }
 
-
+/* PANELS */
 .panel {
   max-width: 900px;
   margin: 3rem auto;
@@ -137,7 +144,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-
+/* SKILLS */
 .skill-list {
   list-style: none;
   text-align: center;
@@ -148,7 +155,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-
+/* COLLAGE */
 .collage-row {
   display: flex;
   gap: 1rem;
@@ -163,6 +170,7 @@ h2 {
   border-radius: 12px;
 }
 
+/* PROJECT GRID */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
@@ -201,7 +209,7 @@ h2 {
   text-shadow: 0 0 6px rgba(47,79,58,0.35);
 }
 
-
+/* CERTIFICATIONS */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -233,6 +241,7 @@ h2 {
   text-shadow: 0 0 6px rgba(47,79,58,0.35);
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 2rem;
