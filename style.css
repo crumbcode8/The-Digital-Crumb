@@ -74,7 +74,7 @@ a:hover {
   text-shadow: 0 0 6px rgba(47, 79, 58, 0.35);
 }
 
-/* ⭐ UPDATED NAV — no full-width blur */
+/* NAV */
 nav {
   display: flex;
   justify-content: center;
@@ -83,10 +83,9 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: transparent; /* remove blur background */
+  background: transparent;
 }
 
-/* ⭐ Each link gets its own glass pill */
 nav a {
   padding: 0.5rem 1rem;
   border-radius: 12px;
@@ -173,7 +172,7 @@ h2 {
 /* PROJECT GRID */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -192,7 +191,7 @@ h2 {
 
 .project-card iframe {
   width: 100%;
-  height: 360px;
+  aspect-ratio: 16 / 9;
   border: none;
   border-radius: 14px;
   margin-bottom: 1rem;
