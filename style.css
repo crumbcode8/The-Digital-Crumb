@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -143,6 +142,26 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+/* HOME BUTTON (glass pill) */
+.home-button {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #2f4f3a;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.home-button:hover {
+  background: rgba(255,255,255,0.35);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 /* SKILLS */
 .skill-list {
   list-style: none;
@@ -248,4 +267,20 @@ footer {
   background: rgba(0,0,0,0.35);
   backdrop-filter: blur(10px);
   margin-top: 3rem;
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 600px) {
+  .panel {
+    margin: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
 }
