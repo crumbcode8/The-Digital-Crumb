@@ -154,7 +154,7 @@ h2 {
 /* FLOATING HOME BUTTON */
 .home-button {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1rem;   /* ↓ lowered from 2rem to 1rem */
   right: 2rem;
   padding: 0.7rem 1.6rem;
   border-radius: 14px;
@@ -172,6 +172,7 @@ h2 {
   color: #fff;
   transform: translateY(-3px);
 }
+
 
 /* SKILLS */
 .skill-list {
